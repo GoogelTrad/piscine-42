@@ -6,27 +6,20 @@
 /*   By: cmichez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 12:15:59 by cmichez           #+#    #+#             */
-/*   Updated: 2022/08/17 13:22:20 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/08/19 10:31:31 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	i;
-	int	premier;
-	int	deuxieme;
-
-	i = 0;
-	premier = 0;
-	deuxieme = 0;
-	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
-	{
-		premier = premier + s1[i];
-		deuxieme = deuxieme + s2[i];
-		i++;
-	}
-	if (premier > deuxieme)
-		return (1);
-	else
+	if (!n)
 		return (0);
+	while ((*s1 && (*s1 == *s2)) && --n)
+	{
+		if (*s1 != *s2)
+			return (*s1 != *s2);
+		s1++;
+		s2++;
+	}
+	return (*s1 -*s2);
 }

@@ -1,30 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmichez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 11:59:40 by cmichez           #+#    #+#             */
-/*   Updated: 2022/08/19 10:31:54 by cmichez          ###   ########.fr       */
+/*   Created: 2022/08/18 14:26:47 by cmichez           #+#    #+#             */
+/*   Updated: 2022/08/20 14:05:21 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strncmp.c"
-#include <stdio.h>
-
-int main(void)
+int	ft_atoi(char *str)
 {
-	char *s1;
-	char *s2;
-	int n = 0;
+	int	i;
+	int	pair;
+	int	nb;
 
-	s1 = "totoooo";
-	s2 = "toto";
-
-	n = ft_strncmp(s1, s2, 3);
-
-	printf("n = %d\n", n);
-	return 0;
-
+	i = 0;
+	pair = 1;
+	nb = 0;
+	while (str[i] == ' ')
+		i++;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			pair = pair * -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		nb = nb + (str[i] - 48);
+		nb = nb * 10;
+		i++;
+	}
+	nb = nb / 10;
+	return (nb * pair);
 }

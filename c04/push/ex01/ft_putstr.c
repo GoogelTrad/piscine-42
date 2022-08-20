@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmichez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 11:59:40 by cmichez           #+#    #+#             */
-/*   Updated: 2022/08/19 10:31:54 by cmichez          ###   ########.fr       */
+/*   Created: 2022/08/17 15:47:57 by cmichez           #+#    #+#             */
+/*   Updated: 2022/08/17 15:53:43 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strncmp.c"
-#include <stdio.h>
+#include <unistd.h>
 
-int main(void)
+void	ft_putstr(char *str)
 {
-	char *s1;
-	char *s2;
-	int n = 0;
+	int	i;
 
-	s1 = "totoooo";
-	s2 = "toto";
-
-	n = ft_strncmp(s1, s2, 3);
-
-	printf("n = %d\n", n);
-	return 0;
-
+	i = 0;
+	while (*str != '\0')
+		write(1, str++, 1);
 }

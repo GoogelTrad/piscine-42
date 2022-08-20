@@ -1,30 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cmichez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/16 11:59:40 by cmichez           #+#    #+#             */
-/*   Updated: 2022/08/19 10:31:54 by cmichez          ###   ########.fr       */
+/*   Created: 2022/08/17 15:37:35 by cmichez           #+#    #+#             */
+/*   Updated: 2022/08/20 14:03:49 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_strncmp.c"
-#include <stdio.h>
-
-int main(void)
+int	ft_strlen(char *str)
 {
-	char *s1;
-	char *s2;
-	int n = 0;
+	int	i;
 
-	s1 = "totoooo";
-	s2 = "toto";
-
-	n = ft_strncmp(s1, s2, 3);
-
-	printf("n = %d\n", n);
-	return 0;
-
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

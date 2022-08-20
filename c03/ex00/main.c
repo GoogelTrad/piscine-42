@@ -6,7 +6,7 @@
 /*   By: cmichez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 11:59:40 by cmichez           #+#    #+#             */
-/*   Updated: 2022/08/16 12:09:14 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/08/19 10:27:19 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
 	char *s2;
 	int n = 0;
 
-	s1 = "Totoooo";
+	s1 = "totoooo";
 	s2 = "toto";
 
 	n = ft_strcmp(s1, s2);
