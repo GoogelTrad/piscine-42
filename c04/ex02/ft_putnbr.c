@@ -6,7 +6,7 @@
 /*   By: cmichez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 15:54:09 by cmichez           #+#    #+#             */
-/*   Updated: 2022/08/17 16:43:42 by cmichez          ###   ########.fr       */
+/*   Updated: 2022/08/21 15:27:35 by cmichez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,20 @@ void	ft_putchar(char c)
 }
 
 void	ft_putnbr(int nb)
-{ 
-	char	c;
+{
+	unsigned int n;
 
-	if(nb == -2147483648)
-	{
-		ft_putchar('-');
-		ft_putchar('2');
-		ft_putnbr(147483648);
-	}
 	if (nb < 0)
 	{
-		nb = -nb;
 		ft_putchar('-');
-	}
-	if(nb < 10)
-	{
-		ft_putchar(nb +'0');
+		n = -nb;
 	}
 	else
+		n = nb;
+	if(n > 9)
 	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
+		ft_putnbr(n / 10);
+		n %= 10;
 	}
+		ft_putchar(n + '0');
 }
